@@ -15,6 +15,7 @@
 		45E7827915971E56002C4B64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7827815971E56002C4B64 /* AppDelegate.m */; };
 		45E7827C15971E56002C4B64 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7827B15971E56002C4B64 /* ViewController.m */; };
 		45E7827F15971E56002C4B64 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7827D15971E56002C4B64 /* ViewController.xib */; };
+		45E7828715971FB9002C4B64 /* SynchronizedUIActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7828615971FB9002C4B64 /* SynchronizedUIActionSheet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +23,17 @@
 		45E7826815971E56002C4B64 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		45E7826A15971E56002C4B64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45E7826C15971E56002C4B64 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		45E7827015971E56002C4B64 /* SynchronizedUIActionSheetDemo-Info.plist */ = {isa = PBXFileReference; path = "SynchronizedUIActionSheetDemo-Info.plist"; sourceTree = "<group>"; };
+		45E7827015971E56002C4B64 /* SynchronizedUIActionSheetDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SynchronizedUIActionSheetDemo-Info.plist"; sourceTree = "<group>"; };
 		45E7827215971E56002C4B64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		45E7827415971E56002C4B64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		45E7827615971E56002C4B64 /* SynchronizedUIActionSheetDemo-Prefix.pch */ = {isa = PBXFileReference; path = "SynchronizedUIActionSheetDemo-Prefix.pch"; sourceTree = "<group>"; };
-		45E7827715971E56002C4B64 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		45E7827615971E56002C4B64 /* SynchronizedUIActionSheetDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SynchronizedUIActionSheetDemo-Prefix.pch"; sourceTree = "<group>"; };
+		45E7827715971E56002C4B64 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		45E7827815971E56002C4B64 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		45E7827A15971E56002C4B64 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		45E7827A15971E56002C4B64 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		45E7827B15971E56002C4B64 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		45E7827E15971E56002C4B64 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		45E7828515971FB9002C4B64 /* SynchronizedUIActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynchronizedUIActionSheet.h; sourceTree = "<group>"; };
+		45E7828615971FB9002C4B64 /* SynchronizedUIActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynchronizedUIActionSheet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				45E7827B15971E56002C4B64 /* ViewController.m */,
 				45E7827D15971E56002C4B64 /* ViewController.xib */,
 				45E7826F15971E56002C4B64 /* Supporting Files */,
+				45E7828515971FB9002C4B64 /* SynchronizedUIActionSheet.h */,
+				45E7828615971FB9002C4B64 /* SynchronizedUIActionSheet.m */,
 			);
 			path = SynchronizedUIActionSheetDemo;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				45E7827515971E56002C4B64 /* main.m in Sources */,
 				45E7827915971E56002C4B64 /* AppDelegate.m in Sources */,
 				45E7827C15971E56002C4B64 /* ViewController.m in Sources */,
+				45E7828715971FB9002C4B64 /* SynchronizedUIActionSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

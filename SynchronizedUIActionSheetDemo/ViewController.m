@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SynchronizedUIActionSheet.h"
 
 @implementation ViewController
 
@@ -17,6 +18,32 @@
 }
 
 #pragma mark - View lifecycle
+
+- (void)say:(NSString *)args, ... {
+    NSMutableArray * array = [NSMutableArray array];
+    if (args) {
+        NSString *tmpStr;
+        
+        va_list strings;
+        va_start(strings, args);
+        [array addObject:args];
+        while ((tmpStr = va_arg(strings, id)) != nil) {
+            [array addObject:tmpStr];
+        }
+        va_end(strings);
+    }
+    NSLog(@"array = %@", array);
+}
+- (IBAction)testArgButtonPressed:(id)sender {
+    [self say:@"say", @"333", @"abc", nil];
+}
+
+- (IBAction)testButtonPressed:(id)sender {
+    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:@"cancel" destructiveButtonTitle:@"destructive" otherButtonTitles:@"button 1", @"button 2", nil];
+    SynchronizedUIActionSheet * sas = [[SynchronizedUIActionSheet alloc] initWithActionSheet:sheet];
+    NSUInteger result = [sas showInView:self.view];
+    NSLog(@"result = %d", result);
+}
 
 - (void)viewDidLoad
 {
