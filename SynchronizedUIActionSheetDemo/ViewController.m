@@ -3,7 +3,7 @@
 //  SynchronizedUIActionSheetDemo
 //
 //  Created by Tang Qiao on 12-6-24.
-//  Copyright (c) 2012年 Netease. All rights reserved.
+//  Copyright (c) 2012年 blog.devtang.com . All rights reserved.
 //
 
 #import "ViewController.h"
@@ -39,12 +39,11 @@
 }
 
 - (IBAction)testButtonPressed:(id)sender {
-    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"button 1", @"button 2", @"button 3", @"button 4", nil];
-    [sheet addButtonWithTitle:@"new added button"];
-    sheet.destructiveButtonIndex = 0;
-    sheet.cancelButtonIndex = 4;
-    SynchronizedUIActionSheet * sas = [[SynchronizedUIActionSheet alloc] initWithActionSheet:sheet];
-    NSUInteger result = [sas showInView:self.view];
+    SynchronizedUIActionSheet * synActionSheet = [[SynchronizedUIActionSheet alloc] init];
+    synActionSheet.titles = [NSArray arrayWithObjects:@"aaa", @"bbb", @"ccc", @"ddd", nil];
+    synActionSheet.destructiveButtonIndex = 1;
+    synActionSheet.cancelButtonIndex = 3;
+    NSUInteger result = [synActionSheet showInView:self.view];
     NSLog(@"result = %d", result);
 }
 

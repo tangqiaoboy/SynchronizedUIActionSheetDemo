@@ -3,34 +3,49 @@
 //  SynchronizedUIActionSheetDemo
 //
 //  Created by Tang Qiao on 12-6-24.
-//  Copyright (c) 2012年 Netease. All rights reserved.
+//  Copyright (c) 2012年 blog.devtang.com . All rights reserved.
 //
 
 #import "SynchronizedUIActionSheet.h"
 
-@implementation SynchronizedUIActionSheet
+@implementation SynchronizedUIActionSheet {
+    UIActionSheet * _actionSheet;
+    NSInteger _selectedIndex;
+}
 
--(id)initWithActionSheet:(UIActionSheet *)actionSheet {
+@synthesize titles = _titles;
+@synthesize destructiveButtonIndex = _destructiveButtonIndex;
+@synthesize cancelButtonIndex = _cancelButtonIndex;
+
+- (id)initWithTitles:(NSArray *)titles {
     self = [super init];
     if (self) {
-        _actionSheet = actionSheet;
+        _titles = titles;
+        _destructiveButtonIndex = -1;
+        _cancelButtonIndex = - 1;
     }
     return self;
 }
 
--(NSUInteger)showInView:(UIView *)view {
-    _actionSheet.delegate = self;
+- (NSInteger)showInView:(UIView *)view {
+    _actionSheet = [[UIActionSheet alloc] init];
+    for (NSString * title in _titles) {
+        [_actionSheet addButtonWithTitle:title];
+    }
+    if (_destructiveButtonIndex != -1) {
+        _actionSheet.destructiveButtonIndex = _destructiveButtonIndex;
+    }
+    if (_cancelButtonIndex != -1) {
+        _actionSheet.cancelButtonIndex = _cancelButtonIndex;
+    }
     [_actionSheet showInView:view];
     CFRunLoopRun();
-    return index;
+    return _selectedIndex;
 }
 
-// Called when a button is clicked. The view will be automatically dismissed after this call returns
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    index = buttonIndex;
+    _selectedIndex = buttonIndex;
     _actionSheet = nil;
-    NSString * title = [actionSheet buttonTitleAtIndex:buttonIndex];
-    NSLog(@"title = %@", title);
     CFRunLoopStop(CFRunLoopGetCurrent());
 }
 
