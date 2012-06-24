@@ -23,7 +23,7 @@
     NSMutableArray * array = [NSMutableArray array];
     if (args) {
         NSString *tmpStr;
-        
+
         va_list strings;
         va_start(strings, args);
         [array addObject:args];
