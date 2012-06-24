@@ -47,6 +47,17 @@
     NSLog(@"result = %d", result);
 }
 
+- (void)someButtonClicked {
+    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"ddd" destructiveButtonTitle:@"aaa" otherButtonTitles:@"bbb", @"ccc", nil];
+    sheet.destructiveButtonIndex = 1;
+    [sheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    int result = buttonIndex;
+    NSLog(@"result = %d", result);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

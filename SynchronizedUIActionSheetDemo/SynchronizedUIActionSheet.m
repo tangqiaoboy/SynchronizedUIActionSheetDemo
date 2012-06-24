@@ -21,10 +21,15 @@
     self = [super init];
     if (self) {
         _titles = titles;
-        _destructiveButtonIndex = -1;
-        _cancelButtonIndex = - 1;
+        _destructiveButtonIndex = 0;
+        _cancelButtonIndex = titles.count - 1;
     }
     return self;
+}
+
+- (void)setTitles:(NSArray *)titles {
+    _titles = titles;
+    _cancelButtonIndex = titles.count - 1;
 }
 
 - (NSInteger)showInView:(UIView *)view {
