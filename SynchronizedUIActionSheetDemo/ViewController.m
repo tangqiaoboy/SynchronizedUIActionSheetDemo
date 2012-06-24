@@ -39,7 +39,10 @@
 }
 
 - (IBAction)testButtonPressed:(id)sender {
-    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:@"cancel" destructiveButtonTitle:@"destructive" otherButtonTitles:@"button 1", @"button 2", nil];
+    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"button 1", @"button 2", @"button 3", @"button 4", nil];
+    [sheet addButtonWithTitle:@"new added button"];
+    sheet.destructiveButtonIndex = 0;
+    sheet.cancelButtonIndex = 4;
     SynchronizedUIActionSheet * sas = [[SynchronizedUIActionSheet alloc] initWithActionSheet:sheet];
     NSUInteger result = [sas showInView:self.view];
     NSLog(@"result = %d", result);
