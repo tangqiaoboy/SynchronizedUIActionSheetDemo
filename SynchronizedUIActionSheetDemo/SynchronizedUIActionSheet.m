@@ -34,6 +34,11 @@
 
 - (NSInteger)showInView:(UIView *)view {
     _actionSheet = [[UIActionSheet alloc] init];
+    
+    // it seems not work, if no delegate set.
+    //_actionSheet.title = @"add a title would be better.";
+    _actionSheet.delegate = self;
+    
     for (NSString * title in _titles) {
         [_actionSheet addButtonWithTitle:title];
     }
