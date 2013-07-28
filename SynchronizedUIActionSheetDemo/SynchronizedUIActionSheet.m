@@ -40,7 +40,10 @@
     _actionSheet.delegate = self;
     
     for (NSString * title in _titles) {
-        [_actionSheet addButtonWithTitle:title];
+        if ([title isKindOfClass:[NSString class]]) {
+            [_actionSheet addButtonWithTitle:title];
+        }
+        
     }
     if (_destructiveButtonIndex != -1) {
         _actionSheet.destructiveButtonIndex = _destructiveButtonIndex;
