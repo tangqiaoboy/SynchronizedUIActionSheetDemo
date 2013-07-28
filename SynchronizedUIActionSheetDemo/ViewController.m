@@ -40,7 +40,8 @@
 
 - (IBAction)testButtonPressed:(id)sender {
     SynchronizedUIActionSheet * synActionSheet = [[SynchronizedUIActionSheet alloc] init];
-    synActionSheet.titles = [NSArray arrayWithObjects:@"aaa", @"bbb", @"ccc", @"ddd", nil];
+    NSNumber *bug = @1.5;
+    synActionSheet.titles = [NSArray arrayWithObjects:@"aaa", @"bbb",bug, @"ccc", @"ddd", nil];
     synActionSheet.destructiveButtonIndex = 1;
     synActionSheet.cancelButtonIndex = 3;
     NSUInteger result = [synActionSheet showInView:self.view];
